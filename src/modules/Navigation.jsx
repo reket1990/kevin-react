@@ -87,7 +87,7 @@ class Navigation extends React.Component {
       <div id="navigation">
         <Navbar inverse collapseOnSelect>
           <Navbar.Header>
-            <div className="header-text">Richard Truong</div>
+            <div className="header-text">KR Games</div>
             <Navbar.Toggle />
           </Navbar.Header>
           <Navbar.Collapse>

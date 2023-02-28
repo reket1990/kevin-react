@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 import './Profile.css';
 import Quote from './submodules/Quote';
-import profilePic from '../images/richard_truong.webp';
+import profilePic from '../images/kevin_riley.png';
 
 // Calculate age
 const ageMS = Date.now() - new Date('08/23/1990').getTime();
@@ -14,31 +14,16 @@ function Profile() {
       <Grid className="scroll-module">
         <h2 className="text-center">Profile</h2>
         <Quote
-          quote="The person that you will spend the most time with in life is yourself, so it's best to make yourself as interesting as possible."
+          quote="I know games."
         />
         <hr />
         <Row>
-          <Col md={4}>
-            <h3>About me</h3>
-            <p>
-              Early career software engineer getting things done one line of code at a time.
-              Passionate about algorithms and building scalable applications.
-              Able to multitask and complete tasks quickly with strong attention to detail.
-            </p>
-            <p>
-              Broad technical skill set but always enthusiastic about learning.
-              Currently most experienced in Python and JavaScript.
-            </p>
-          </Col>
-          <Col md={4} className="text-center">
-            <img src={profilePic} alt="Richard Truong" />
-          </Col>
-          <Col md={4}>
+          <Col md={3}>
             <h3>Details</h3>
             <p>
               <strong>Name:</strong>
               <br />
-              Richard Truong
+              Kevin Riley
             </p>
             <p>
               <strong>Age:</strong>
@@ -50,7 +35,29 @@ function Profile() {
             <p>
               <strong>Location:</strong>
               <br />
-              Los Angeles, California, United States
+              Los Angeles, California, USA
+            </p>
+            <p>
+              <strong>Power Level:</strong>
+              <br />
+              Over 9000
+            </p>
+          </Col>
+          <Col md={4} className="text-center">
+            <img src={profilePic} alt="Kevin Riley" />
+          </Col>
+          <Col md={5}>
+            <h3>About me</h3>
+            <p>
+              I know games in a way few people do because I love playing new games and I love
+              getting good at games. I was a professional Starcraft 2 player for many years.
+              After that, I&apos;ve pursued high achievements in many different games, some in
+              competitive games against other players and some in purely player vs AI experiences.
+              Because I&apos;ve spent so much of my life involved directly in playing games, I pick
+              up new games quickly and can provide design insight quickly regarding many facets of
+              a game ranging from difficulty, UI, presentation and more. I also worked as a
+              Software Engineer for 1.5 years and studied CS in college so I have an appreciation
+              for programming.
             </p>
           </Col>
         </Row>

@@ -9,8 +9,7 @@ function Contact() {
       <Grid className="scroll-module">
         <h2 className="text-center">Contact</h2>
         <Quote
-          quote="The biggest communication problem is we do not listen to understand. We listen to reply." // eslint-disable-line max-len
-          author="Stephen R. Covey"
+          quote="I'm open for communication."
         />
         <hr />
         <Row>

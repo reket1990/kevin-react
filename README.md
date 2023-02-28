@@ -1,8 +1,6 @@
-# RichardTruong.com
+# Kevin Riley's company website
 
-Richard Truong's personal website and interactive resume.
-
-[http://www.richardtruong.com](http://www.richardtruong.com)
+Kevin Riley's company website and interactive resume.
 
 
 ---

@@ -18,18 +18,19 @@ function Home() {
     <div>
       <Jumbotron>
         <Grid>
-          <h1>Richard Truong</h1>
+          <h1>KR Games</h1>
           <hr />
-          <p>Interactive Resume</p>
+          { /* eslint-disable-next-line max-len */ }
+          <p>We specialize in bringing your gaming ideas to life. With years of experience in the industry, our team of experts is here to guide you through every step of the game design process, from concept development to final product release.</p>
         </Grid>
         <button onClick={scrollDown} className="scroll-down">
           <span className="glyphicon glyphicon-chevron-down" />
         </button>
       </Jumbotron>
       <Navigation />
+      <Interests />
       <Profile />
       <Experiences />
-      <Interests />
       <Skills />
       <Contact />
       <Footer />
