@@ -11,16 +11,15 @@ const tabs = [{
   id: 'profile',
   text: 'Profile',
 }, {
-  id: 'experiences',
-  text: 'Experiences',
-}, {
   id: 'skills',
   text: 'Breadth of Play',
+}, {
+  id: 'achievements',
+  text: 'Achievements',
 }, {
   id: 'contact',
   text: 'Contact',
 }];
-
 
 export function smoothScroll(tabId) {
   let scrollHeight = document.getElementById(tabId).offsetTop;

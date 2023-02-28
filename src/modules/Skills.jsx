@@ -36,16 +36,29 @@ const languagePairs = groupPairs(languages);
 
 function Skills() {
   return (
-    <div id="skills">
-      <Grid className="scroll-module">
-        <h2 className="text-center">Breadth of Play</h2>
-        <Quote
-          quote="I play games."
-        />
-        <hr />
-        <h3>Languages</h3>
-        {languagePairs.map(([language1, language2]) => <SkillPair key={`language-${language1.name}-${language2.name}`} entry1={language1} entry2={language2} />)}
-      </Grid>
+    <div>
+      <div id="skills">
+        <Grid className="scroll-module">
+          <h2 className="text-center">Breadth of Play</h2>
+          <Quote
+            quote="I play games."
+          />
+          <hr />
+          <h3>Languages</h3>
+          {languagePairs.map(([language1, language2]) => <SkillPair key={`language-${language1.name}-${language2.name}`} entry1={language1} entry2={language2} />)}
+        </Grid>
+      </div>
+      <div id="achievements">
+        <Grid className="scroll-module">
+          <h2 className="text-center">Achievements</h2>
+          <Quote
+            quote="I master games."
+          />
+          <hr />
+          <h3>Languages</h3>
+          {languagePairs.map(([language1, language2]) => <SkillPair key={`language-${language1.name}-${language2.name}`} entry1={language1} entry2={language2} />)}
+        </Grid>
+      </div>
     </div>
   );
 }

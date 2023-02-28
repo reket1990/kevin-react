@@ -1,17 +1,39 @@
+#skills {
+  /* background-color: #e0e0e0; */
+}
+
 #skills h3 {
+    color: #8b0000;
+  }
+
+  #skills .value {
+    margin-top: 10px;
+  }
+
+  #skills .starFull {
+    color: #8b0000;
+    margin: 0 1px;
+  }
+
+  #skills .starEmpty {
+    color: #b0b0b0;
+    margin: 0 1px;
+  }
+
+#achievements h3 {
   color: #8b0000;
 }
 
-#skills .value {
+#achievements .value {
   margin-top: 10px;
 }
 
-#skills .starFull {
+#achievements .starFull {
   color: #8b0000;
   margin: 0 1px;
 }
 
-#skills .starEmpty {
+#achievements .starEmpty {
   color: #b0b0b0;
   margin: 0 1px;
 }
