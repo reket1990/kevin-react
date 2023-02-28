@@ -9,22 +9,22 @@ function Contact() {
       <Grid className="scroll-module">
         <h2 className="text-center">Contact</h2>
         <Quote
-          quote="I'm open for communication."
+          quote="I can make your game better."
         />
         <hr />
         <Row>
           <Col lg={6}>
-            <a href="https://www.linkedin.com/in/richard-truong/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/kevin-riley-a275528/" target="_blank" rel="noopener noreferrer">
               <span className="fa fa-linkedin-square" />
               {' '}
-              www.linkedin.com/in/richard-truong
+              www.linkedin.com/in/kevin-riley-a275528
             </a>
           </Col>
           <Col lg={6}>
-            <a href="mailto:richard_truong@hmc.edu">
+            <a href="mailto:k.riley08@gmail.com">
               <span className="fa fa-envelope-square" />
               {' '}
-              richard_truong@hmc.edu
+              k.riley08@gmail.com
             </a>
           </Col>
         </Row>

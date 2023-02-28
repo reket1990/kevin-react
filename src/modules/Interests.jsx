@@ -6,32 +6,25 @@ import Quote from './submodules/Quote';
 import algoPic from '../images/algorithm.webp';
 import gamesPic from '../images/gamecube-controller.png';
 import cardsPic from '../images/cards.webp';
-import pingPongPic from '../images/ping-pong.png';
 
 // TODO: Make admin tool to modify interests
 const interests = [{
-  name: 'Algorithms',
-  description: 'I love solving problems and optimizing. It\'s beautiful that there are so many ways to approach a problem, and depending on the solution, the performance is highly variable. There is an amazing satisfaction when a good algorithm works!',
+  name: 'Aeons End',
+  description: 'Aeon\'s End is a cooperative game that explores the deckbuilding genre with a number of innovative mechanisms, including a variable turn order system that simulates the chaos of an attack, and deck management rules that require careful planning with every discarded card. Players will struggle to defend Gravehold from The Nameless and their hordes using unique abilities, powerful spells, and, most importantly of all, their collective wits.',
   image: algoPic,
   style: { backgroundColor: 'orange' },
 },
 {
-  name: 'Games',
-  description: 'Games encompass some of my favorite attributes for a pastime: fun, competitive, interactive, challenging, fair. Some of my favorite video games are Super Smash Bros. Melee, Starcraft: Brood War, League of Legends, Ocarina of Time and Mega Man X2.',
+  name: 'Kodama Forest',
+  description: 'In Kodama Forest, everyone works with their neighbors to cover as much of their shared player boards as possible. Every round, each player places one tile on the board to their right and one tile on the board to their left. Forests are penalized for every uncovered dirt section and the game ends when one board has covered all of its “5” and “10” dirt spaces. Players score both of their shared boards, with the lowest combined score determining the winner.',
   image: gamesPic,
   style: { backgroundColor: 'yellowgreen' },
 },
 {
-  name: 'Cardistry and Magic',
-  description: 'Being blown away with unbelievable feats and wonder is one of the best feelings in the world. I love being able to share this feeling through the beauty of cardistry and magic. My current favorite deck of cards is the FW17 Virtuoso Deck.',
+  name: 'Sapphiro',
+  description: 'Dazzling gems are the focus of your quest in Sapphiro. Play your diamond tiles to capture rubies, emeralds, and other valuable jewels by matching colors and surrounding the gems. Be careful not to leave a quick or easy way for your opponents to do the same. Be the first to collect one jewel of each color to win.',
   image: cardsPic,
   style: { backgroundColor: '#666' },
-},
-{
-  name: 'Ping Pong',
-  description: 'Everyone needs a little bit of exercise in their life. I love the simplicity of ping pong, along with its approachable and easy to learn, hard to master attribute. Some of my other favorite sports to play are Tennis and Sabre Fencing.',
-  image: pingPongPic,
-  style: { backgroundColor: 'lightskyblue' },
 }];
 
 let interestNum = 0;
@@ -40,10 +33,9 @@ function Interests() {
   return (
     <div id="interests">
       <Grid className="scroll-module">
-        <h2 className="text-center">Interests</h2>
+        <h2 className="text-center">Portfolio</h2>
         <Quote
-          quote="Time you enjoy wasting is not wasted time."
-          author="John Lennon"
+          quote="I make games."
         />
         <hr />
         {interests.map((interest) => {

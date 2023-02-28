@@ -2,6 +2,22 @@
   background-color: #e0e0e0;
 }
 
+  @media (min-width: 768px) {
+    /* Create spacing for right rail navigation */
+    #experiences .container.scroll-module {
+      padding: 0 165px 50px;
+    }
+  }
+
+  #experiences .showMore {
+    color: #8b0000;
+    cursor: pointer;
+    text-align: center;
+  }
+  #experiences .showMore:hover {
+    text-decoration: underline;
+  }
+
   #experiences h3 {
     color: #8b0000;
   }

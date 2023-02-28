@@ -5,7 +5,7 @@ import Quote from './submodules/Quote';
 import profilePic from '../images/kevin_riley.png';
 
 // Calculate age
-const ageMS = Date.now() - new Date('08/23/1990').getTime();
+const ageMS = Date.now() - new Date('10/11/1989').getTime();
 const age = new Date(ageMS).getUTCFullYear() - 1970;
 
 function Profile() {

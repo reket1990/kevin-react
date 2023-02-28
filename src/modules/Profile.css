@@ -1,18 +1,22 @@
-#profile .container {
-  margin-bottom: 30px;
+#profile {
+  background-color: #e0e0e0;
 }
 
-  #profile .container img {
-    border: 15px solid #b0b0b0;
-    border-radius: 50%;
-    height: 250px;
-    margin-top: 20px;
-    width: 250px;
-  }
-  @media (min-width: 992px) and (max-width: 1199px) {
-    #profile .container img {
-      border: 10px solid #e0e0e0;
-      height: 170px;
-      width: 170px;
+  #profile .container {
+      padding-bottom: 30px;
     }
-  }
+
+      #profile .container img {
+        border: 15px solid #b0b0b0;
+        border-radius: 50%;
+        height: 250px;
+        margin-top: 20px;
+        width: 250px;
+      }
+      @media (min-width: 992px) and (max-width: 1199px) {
+        #profile .container img {
+          border: 10px solid #e0e0e0;
+          height: 170px;
+          width: 170px;
+        }
+      }

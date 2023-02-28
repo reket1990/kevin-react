@@ -1,5 +1,4 @@
 #interests {
-  background-color: #e0e0e0;
   margin-bottom: 20px;
 }
 
@@ -12,7 +11,7 @@
 
 .interest-image-container {
   margin: 20px auto 0;
-  max-width:250px;
+  max-width: 250px;
   position: relative;
   text-align: center;
   width: 95%;

@@ -5,17 +5,17 @@ import './Navigation.css';
 require('smoothscroll-polyfill').polyfill();
 
 const tabs = [{
+  id: 'interests',
+  text: 'Portfolio',
+}, {
   id: 'profile',
   text: 'Profile',
 }, {
   id: 'experiences',
   text: 'Experiences',
 }, {
-  id: 'interests',
-  text: 'Interests',
-}, {
   id: 'skills',
-  text: 'Skills',
+  text: 'Breadth of Play',
 }, {
   id: 'contact',
   text: 'Contact',
