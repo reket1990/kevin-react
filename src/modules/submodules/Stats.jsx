@@ -10,26 +10,31 @@ const statsData = [
     title: 'Strategy',
     value: '100',
     description: 'StarCraft 2 IEM Champion, Masters ranked player in League of Legends, best Hearthstone player in the world, I am well versed in strategy games.',
+    color: '#339933',
   },
   {
     title: 'FPS',
     value: '85',
     description: 'Boom headshot.',
+    color: '#333399',
   },
   {
     title: 'Tabletop',
     value: '99',
     description: 'I literally make board games.',
+    color: '#999933',
   },
   {
     title: 'Other',
     value: '92',
     description: 'I play games.',
+    color: '#993399',
   },
   {
     title: 'RPG',
     value: '97',
     description: 'I\'ve no-lifed a game or two in my time.',
+    color: '#993333',
   },
 ];
 
@@ -51,9 +56,6 @@ class Stats extends React.Component {
     const { tabIndex } = this.state;
     const setTabIndex = (index) => { this.setState({ tabIndex: index }); };
 
-    // Define colors
-    const statColors = ['#339933', '#333399', '#999933', '#993399', '#993333'];
-
     // Define pentagon (or other polygon) size and coordinates.
     const polygonX = 240;
     const polygonY = 240;
@@ -61,9 +63,6 @@ class Stats extends React.Component {
     // Define size of circles.
     const circleSize = 56;
     let circles = [];
-
-    const innerPolygonColor = statColors[0];
-    const innerPolygonKnobs = statColors.map(() => ({ over: false }));
 
     // Get canvas context.
     const canvas = document.getElementById('statsCanvas');
@@ -81,7 +80,6 @@ class Stats extends React.Component {
     const vertices = [];
     function drawRegularPolygon(x, y, fill, stroke, strokeWidth, sides, radius) {
       // Draws a regular polygon onto the canvas.
-      // Note that a circle can be made by setting sides to radius/2.
 
       // Variable declarations
       let arc;
@@ -162,17 +160,12 @@ class Stats extends React.Component {
       }
       // Set alpha of polygon
       ctx.globalAlpha = 0.5;
-      ctx.fillStyle = innerPolygonColor;
+      ctx.fillStyle = '#339933';
       ctx.fill();
 
       ctx.globalAlpha = 1;
-      ctx.strokeStyle = innerPolygonColor;
+      ctx.strokeStyle = '#339933';
       ctx.stroke();
-
-      for (let i = 0; i < innerPolygonVertices.length; i += 1) {
-        innerPolygonKnobs[i].x = innerPolygonVertices[i].x;
-        innerPolygonKnobs[i].y = innerPolygonVertices[i].y;
-      }
 
       // Draw circles;
       for (let i = 0; i < statsData.length; i += 1) {
@@ -187,12 +180,12 @@ class Stats extends React.Component {
         ctx.beginPath();
         ctx.arc(x, y, circleSize - 4, 0, 2 * Math.PI, false);
         ctx.fillStyle = '#fff';
-        if (index === tabIndex)ctx.fillStyle = statColors[index];
+        if (index === tabIndex)ctx.fillStyle = statsData[index].color;
         ctx.fill();
         ctx.closePath();
         ctx.beginPath();
         ctx.arc(x, y, circleSize - 6, 0, 2 * Math.PI, false);
-        ctx.fillStyle = statColors[index];
+        ctx.fillStyle = statsData[index].color;
         if (index === tabIndex)ctx.fillStyle = '#fff';
         ctx.fill();
         ctx.closePath();
@@ -202,10 +195,10 @@ class Stats extends React.Component {
           size: circleSize - 6,
           radius: (circleSize - 6) / 2,
           stat: statsData[index].title,
-          color: statColors[index],
+          color: statsData[index].color,
         });
         ctx.fillStyle = '#fff';
-        if (index === tabIndex)ctx.fillStyle = statColors[index];
+        if (index === tabIndex)ctx.fillStyle = statsData[index].color;
         ctx.font = '16px Open Sans';
         text = statsData[index].title.toUpperCase();
         stat = statsData[index].value;
