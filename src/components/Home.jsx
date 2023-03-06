@@ -4,13 +4,13 @@ import './Home.css';
 import Navigation, { smoothScroll } from '../modules/Navigation';
 import Profile from '../modules/Profile';
 import Experiences from '../modules/Experiences';
-import Interests from '../modules/Interests';
+import Portfolio from '../modules/Portfolio';
 import Skills from '../modules/Skills';
 import Contact from '../modules/Contact';
 import Footer from '../modules/Footer';
 
 function scrollDown() {
-  smoothScroll('profile');
+  smoothScroll('portfolio');
 }
 
 function Home() {
@@ -28,7 +28,7 @@ function Home() {
         </button>
       </Jumbotron>
       <Navigation />
-      <Interests />
+      <Portfolio />
       <Profile />
       <Experiences />
       <Skills />

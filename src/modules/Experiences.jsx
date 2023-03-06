@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid } from 'react-bootstrap';
 import './Experiences.css';
 import Experience from './submodules/Experience';
-// Images for interests
+// Images for resume
 import muddIcon from '../images/icon-mudd.jpg';
 import appLovinIcon from '../images/icon-applovin.jpg';
 

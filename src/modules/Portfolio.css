@@ -1,25 +1,25 @@
-#interests {
+#portfolio {
   margin-bottom: 20px;
 }
 
 @media (min-width: 768px) {
-  .interest-row {
+  .portfolio-item-row {
     align-items: center;
     display: flex;
   }
 }
 
-.interest-image-container {
+.portfolio-item-image-container {
   margin: 20px auto 0;
   max-width: 250px;
   position: relative;
   text-align: center;
   width: 95%;
 }
-  .interest-image {
+  .portfolio-item-image {
     width: 100%;
   }
-  .interest-image-background {
+  .portfolio-item-image-background {
     border-radius: 50%;
     height: 100%;
     position: absolute;

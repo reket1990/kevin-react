@@ -1,14 +1,13 @@
 import React from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
-import './Interests.css';
+import './Portfolio.css';
 import Quote from './submodules/Quote';
-// Images for interests
+// Images for Portfolio
 import algoPic from '../images/algorithm.webp';
 import gamesPic from '../images/gamecube-controller.png';
 import cardsPic from '../images/cards.webp';
 
-// TODO: Make admin tool to modify interests
-const interests = [{
+const portfolio = [{
   name: 'Aeons End',
   description: 'Aeon\'s End is a cooperative game that explores the deckbuilding genre with a number of innovative mechanisms, including a variable turn order system that simulates the chaos of an attack, and deck management rules that require careful planning with every discarded card. Players will struggle to defend Gravehold from The Nameless and their hordes using unique abilities, powerful spells, and, most importantly of all, their collective wits.',
   image: algoPic,
@@ -27,52 +26,52 @@ const interests = [{
   style: { backgroundColor: '#666' },
 }];
 
-let interestNum = 0;
+let itemNum = 0;
 
-function Interests() {
+function Portfolio() {
   return (
-    <div id="interests">
+    <div id="portfolio">
       <Grid className="scroll-module">
         <h2 className="text-center">Portfolio</h2>
         <Quote
           quote="I make games."
         />
         <hr />
-        {interests.map((interest) => {
-          interestNum += 1;
-          if (interestNum % 2) {
+        {portfolio.map((interestItem) => {
+          itemNum += 1;
+          if (itemNum % 2) {
             return (
-              <Row key={`interest-${interest.name}`} className="interest-row">
+              <Row key={`interest-item-${interestItem.name}`} className="interest-item-row">
                 <Col sm={4} md={3}>
-                  <div className="interest-image-container">
-                    <img className="interest-image" src={interest.image} alt="{interest.name}" />
-                    <div className="interest-image-background" style={interest.style} />
+                  <div className="interest-item-image-container">
+                    <img className="interest-item-image" src={interestItem.image} alt={interestItem.name} />
+                    <div className="interest-item-image-background" style={interestItem.style} />
                   </div>
                 </Col>
                 <Col sm={8} md={9}>
-                  <h3>{ interest.name }</h3>
-                  <p>{ interest.description }</p>
+                  <h3>{ interestItem.name }</h3>
+                  <p>{ interestItem.description }</p>
                 </Col>
               </Row>
             );
           }
           // else
           return (
-            <Row key={`interest-${interest.name}`} className="interest-row">
+            <Row key={`interest-item-${interestItem.name}`} className="interest-item-row">
               <Col sm={4} md={3} className="visible-xs-block">
-                <div className="interest-image-container">
-                  <img className="interest-image" src={interest.image} alt="{interest.name}" />
-                  <div className="interest-image-background" style={interest.style} />
+                <div className="interest-item-image-container">
+                  <img className="interest-item-image" src={interestItem.image} alt="{interest.name}" />
+                  <div className="interest-item-image-background" style={interestItem.style} />
                 </div>
               </Col>
               <Col sm={8} md={9}>
-                <h3>{ interest.name }</h3>
-                <p>{ interest.description }</p>
+                <h3>{ interestItem.name }</h3>
+                <p>{ interestItem.description }</p>
               </Col>
               <Col sm={4} md={3} className="hidden-xs">
-                <div className="interest-image-container">
-                  <img className="interest-image" src={interest.image} alt="{interest.name}" />
-                  <div className="interest-image-background" style={interest.style} />
+                <div className="interest-item-image-container">
+                  <img className="interest-item-image" src={interestItem.image} alt="{interest.name}" />
+                  <div className="interest-item-image-background" style={interestItem.style} />
                 </div>
               </Col>
             </Row>
@@ -83,4 +82,4 @@ function Interests() {
   );
 }
 
-export default Interests;
+export default Portfolio;
