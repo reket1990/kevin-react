@@ -1,5 +1,6 @@
 /* eslint no-mixed-operators: 0 */
 import React from 'react';
+import { Grid, Row, Col } from 'react-bootstrap';
 import './Stats.css';
 
 // Code inspired by https://codepen.io/semibran/pen/NPOGdd
@@ -262,7 +263,20 @@ class Stats extends React.Component {
   render() {
     return (
       <div id="stats">
-        <canvas id="statsCanvas" width="480" height="480" />
+        <Grid>
+          <Row>
+            <Col md={8}>
+              <canvas id="statsCanvas" width="480" height="480" />
+            </Col>
+            <Col md={4}>
+              <h3>Strategy</h3>
+              <p>
+                StarCraft 2 IEM Champion, Masters ranked player in League of Legends,
+                best Hearthstone player in the world, I am well versed in strategy games.
+              </p>
+            </Col>
+          </Row>
+        </Grid>
       </div>
     );
   }
