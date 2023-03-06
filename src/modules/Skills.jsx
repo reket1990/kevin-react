@@ -335,13 +335,29 @@ class Skills extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // showSkills: false,
+      showSkills: false,
       showAchievements: false,
     };
   }
 
   render() {
-    const { showAchievements } = this.state;
+    const { showSkills, showAchievements } = this.state;
+
+    let skills = (
+      <p className="showMore" onClick={() => this.setState({ showSkills: true })}>Show More Skills</p>
+    );
+    if (showSkills) {
+      skills = breadth.map((catGroup) => {
+        const gamePairs = groupPairs(catGroup.games);
+        return (
+          <div key={`gamecat-${catGroup.name}`}>
+            <h3>{catGroup.name}</h3>
+            {gamePairs.map(([game1, game2]) => <SkillPair key={`game-${game1.name}-${game2.name}`} entry1={game1} entry2={game2} />)}
+          </div>
+        );
+      });
+    }
+
     let achievements = (
       <p className="showMore" onClick={() => this.setState({ showAchievements: true })}>Show More Achievements</p>
     );
@@ -363,15 +379,7 @@ class Skills extends React.Component {
               quote="I play games."
             />
             <hr />
-            {breadth.map((catGroup) => {
-              const gamePairs = groupPairs(catGroup.games);
-              return (
-                <div key={`gamecat-${catGroup.name}`}>
-                  <h3>{catGroup.name}</h3>
-                  {gamePairs.map(([game1, game2]) => <SkillPair key={`game-${game1.name}-${game2.name}`} entry1={game1} entry2={game2} />)}
-                </div>
-              );
-            })}
+            {skills}
           </Grid>
         </div>
         <div id="achievements">

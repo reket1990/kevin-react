@@ -12,7 +12,7 @@ const tabs = [{
   text: 'Profile',
 }, {
   id: 'skills',
-  text: 'Breadth of Play',
+  text: 'Skills',
 }, {
   id: 'achievements',
   text: 'Achievements',
