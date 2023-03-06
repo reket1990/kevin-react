@@ -5,6 +5,7 @@ import Navigation, { smoothScroll } from '../modules/Navigation';
 import Profile from '../modules/Profile';
 import Experiences from '../modules/Experiences';
 import Portfolio from '../modules/Portfolio';
+import Sale from '../modules/Sale';
 import Skills from '../modules/Skills';
 import Contact from '../modules/Contact';
 import Footer from '../modules/Footer';
@@ -29,6 +30,7 @@ function Home() {
       </Jumbotron>
       <Navigation />
       <Portfolio />
+      <Sale />
       <Profile />
       <Experiences />
       <Skills />

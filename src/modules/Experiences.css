@@ -1,73 +1,69 @@
-#experiences {
-  background-color: #e0e0e0;
+@media (min-width: 768px) {
+  /* Create spacing for right rail navigation */
+  #experiences .container.scroll-module {
+    padding: 0 165px 50px;
+  }
 }
 
+#experiences .showMore:hover {
+  text-decoration: underline;
+}
+
+#experiences h3 {
+  color: #8b0000;
+}
+
+#experiences .experience {
+  margin-bottom: 35px;
+}
+  #experiences .experience .icon {
+    float: left;
+    margin: 0 15px 0 0;
+    width: 46px;
+  }
   @media (min-width: 768px) {
-    /* Create spacing for right rail navigation */
-    #experiences .container.scroll-module {
-      padding: 0 165px 50px;
+    #experiences .experience .icon {
+      margin: 10px 20px 10px 0;
     }
   }
 
-  #experiences .showMore:hover {
-    text-decoration: underline;
+
+  #experiences .experience .title {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  #experiences .experience .description {
+    white-space: pre-line;
   }
 
-  #experiences h3 {
+  #experiences .experience .details {
     color: #8b0000;
   }
 
-  #experiences .experience {
-    margin-bottom: 35px;
-  }
-    #experiences .experience .icon {
-      float: left;
-      margin: 0 15px 0 0;
-      width: 46px;
+    #experiences .experience .details .detail {
+      display: block;
+      margin-bottom: 5px;
     }
     @media (min-width: 768px) {
-      #experiences .experience .icon {
-        margin: 10px 20px 10px 0;
-      }
-    }
-
-
-    #experiences .experience .title {
-      font-weight: bold;
-      margin-top: 10px;
-    }
-    
-    #experiences .experience .description {
-      white-space: pre-line;
-    }
-
-    #experiences .experience .details {
-      color: #8b0000;
-    }
-
       #experiences .experience .details .detail {
-        display: block;
-        margin-bottom: 5px;
+        display: inline-block;
       }
-      @media (min-width: 768px) {
-        #experiences .experience .details .detail {
-          display: inline-block;
-        }
-      }
-
-      #experiences .experience .details .divider {
-        display: none;
-      }
-      @media (min-width: 768px) {
-        #experiences .experience .details .divider {
-          color: #000000;
-          display: inline-block;
-          margin: 0 10px;
-          vertical-align: 2px;
-        }
-      }
-
-    #experiences .experience .link {
-      color: #8b0000;
-      margin-left: 5px;
     }
+
+    #experiences .experience .details .divider {
+      display: none;
+    }
+    @media (min-width: 768px) {
+      #experiences .experience .details .divider {
+        color: #000000;
+        display: inline-block;
+        margin: 0 10px;
+        vertical-align: 2px;
+      }
+    }
+
+  #experiences .experience .link {
+    color: #8b0000;
+    margin-left: 5px;
+  }
