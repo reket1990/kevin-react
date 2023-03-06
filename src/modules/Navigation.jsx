@@ -82,7 +82,7 @@ class Navigation extends React.Component {
       // Add active
       tabElements[active].classList.add('active');
     };
-  };
+  }
 
   render() {
     return (
