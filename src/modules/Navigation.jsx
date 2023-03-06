@@ -8,6 +8,9 @@ const tabs = [{
   id: 'portfolio',
   text: 'Portfolio',
 }, {
+  id: 'about',
+  text: 'About',
+}, {
   id: 'profile',
   text: 'Profile',
 }, {

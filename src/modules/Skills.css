@@ -2,7 +2,12 @@
   background-color: #e0e0e0;
 }
 
-#skills h3 {
+  #skills .showMore {
+    margin-bottom: 20px;
+    margin-top: 40px;
+  }
+
+  #skills h3 {
     color: #8b0000;
   }
 
@@ -24,14 +29,14 @@
   color: #8b0000;
 }
 
-  #achievements #carousel h3 {
-    color: #ffffff;
-  }
+#achievements #carousel h3 {
+  color: #ffffff;
+}
 
-  #achievements .carouselImage {
-    height: 700px;
-    object-fit: contain;
-  }
+#achievements .carouselImage {
+  height: 700px;
+  object-fit: contain;
+}
 
 #achievements .showMore {
   margin-bottom: 20px;

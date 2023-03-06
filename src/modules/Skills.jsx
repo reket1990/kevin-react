@@ -3,6 +3,7 @@ import { Grid, Carousel } from 'react-bootstrap';
 import './Skills.css';
 import Quote from './submodules/Quote';
 import SkillPair from './submodules/SkillPair';
+import Stats from './submodules/Stats';
 // Images for Carousel
 import qxc1Pic from '../images/qxc1.jpg';
 import qxc2Pic from '../images/qxc2.jpg';
@@ -374,11 +375,12 @@ class Skills extends React.Component {
       <div>
         <div id="skills">
           <Grid className="scroll-module">
-            <h2 className="text-center">Breadth of Play</h2>
+            <h2 className="text-center">Skills</h2>
             <Quote
               quote="I play games."
             />
             <hr />
+            <Stats />
             {skills}
           </Grid>
         </div>

@@ -10,24 +10,24 @@ function Pay() {
         <hr />
         <Row>
           <Col lg={6}>
-            <a className="link" href="https://paypal.me/reketkun" target="_blank" rel="noopener noreferrer">
+            <a className="link" href="xxx" target="_blank" rel="noopener noreferrer">
               <span className="fa fa-paypal" />
               {' '}
-              paypal.me/reketkun
+              xxx
             </a>
           </Col>
           <Col lg={6}>
             <span className="link">
               <span className="fa fa-vimeo-square" />
               {' '}
-              Venmo: @Richard-D-Truong
+              Venmo: @Kevin-Riley-22
             </span>
           </Col>
           <Col lg={6}>
             <span className="link">
               <span className="fa fa-university" />
               {' '}
-              Zelle: reket1990@yahoo.com
+              Zelle: xxx
             </span>
           </Col>
         </Row>
