@@ -1,3 +1,7 @@
 #stats .container {
   width: 100%;
 }
+
+#statsWidth {
+  margin-right: 10px;
+}

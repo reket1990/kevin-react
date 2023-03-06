@@ -45,6 +45,7 @@ class Stats extends React.Component {
   }
 
   componentDidMount() {
+    this.setState({ tabIndex: 0 }); // hack to force re-render to calculate width
     this.postRender();
   }
 
@@ -57,11 +58,13 @@ class Stats extends React.Component {
     const setTabIndex = (index) => { this.setState({ tabIndex: index }); };
 
     // Define pentagon (or other polygon) size and coordinates.
-    const polygonX = 240;
-    const polygonY = 240;
-    const polygonSize = 120;
-    // Define size of circles.
-    const circleSize = 56;
+    const width = document.getElementById('statsWidth') && document.getElementById('statsWidth').offsetWidth;
+    const sizeMultiplier = width / 480;
+    const polygonX = 240 * sizeMultiplier;
+    const polygonY = 240 * sizeMultiplier;
+    const polygonSize = 120 * sizeMultiplier;
+    const circleSize = 56 * sizeMultiplier;
+
     let circles = [];
 
     // Get canvas context.
@@ -232,12 +235,16 @@ class Stats extends React.Component {
   render() {
     const { tabIndex } = this.state;
 
+    const width = document.getElementById('statsWidth') && document.getElementById('statsWidth').offsetWidth;
+
     return (
       <div id="stats">
         <Grid>
           <Row>
             <Col md={8}>
-              <canvas id="statsCanvas" width="480" height="480" />
+              <div id="statsWidth">
+                <canvas id="statsCanvas" width={width} height={width} />
+              </div>
             </Col>
             <Col md={4}>
               <h3>{ statsData[tabIndex].title }</h3>
