@@ -9,11 +9,6 @@
     }
   }
 
-  #experiences .showMore {
-    color: #8b0000;
-    cursor: pointer;
-    text-align: center;
-  }
   #experiences .showMore:hover {
     text-decoration: underline;
   }

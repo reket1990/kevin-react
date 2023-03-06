@@ -1,8 +1,12 @@
 import React from 'react';
-import { Grid } from 'react-bootstrap';
+import { Grid, Carousel } from 'react-bootstrap';
 import './Skills.css';
 import Quote from './submodules/Quote';
 import SkillPair from './submodules/SkillPair';
+// Images for Carousel
+import qxc1Pic from '../images/qxc1.jpg';
+import qxc2Pic from '../images/qxc2.jpg';
+import mastersPic from '../images/masters.jpg';
 
 const breadth = [
   {
@@ -219,6 +223,30 @@ const breadth = [
   },
 ];
 
+const carousel = [
+  {
+    key: 'first',
+    image: qxc2Pic,
+    alt: 'FXO qxc interview',
+    label: 'FXO qxc interviewed after All-Killing Incredible Miracle (full sweep)',
+    description: 'StarCraft 2 - July 2011',
+  },
+  {
+    key: 'second',
+    image: mastersPic,
+    alt: 'Masters',
+    label: 'Masters Rank - Top 0.18% of players in the world',
+    description: 'League of Legends - August 2022',
+  },
+  {
+    key: 'third',
+    image: qxc1Pic,
+    alt: 'FXO qxc',
+    label: 'FXO qxc celebrating a win in Korea',
+    description: 'StarCraft 2 - July 2011',
+  },
+];
+
 const mastery = [
   {
     name: 'Player vs Player',
@@ -303,44 +331,77 @@ const groupPairs = (input) => {
   return output;
 };
 
-function Skills() {
-  return (
-    <div>
-      <div id="skills">
-        <Grid className="scroll-module">
-          <h2 className="text-center">Breadth of Play</h2>
-          <Quote
-            quote="I play games."
-          />
-          <hr />
-          {breadth.map((catGroup) => {
-            const gamePairs = groupPairs(catGroup.games);
-            return (
-              <div key={`gamecat-${catGroup.name}`}>
-                <h3>{catGroup.name}</h3>
-                {gamePairs.map(([game1, game2]) => <SkillPair key={`game-${game1.name}-${game2.name}`} entry1={game1} entry2={game2} />)}
-              </div>
-            );
-          })}
-        </Grid>
+class Skills extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      // showSkills: false,
+      showAchievements: false,
+    };
+  }
+
+  render() {
+    const { showAchievements } = this.state;
+    let achievements = (
+      <p className="showMore" onClick={() => this.setState({ showAchievements: true })}>Show More Achievements</p>
+    );
+    if (showAchievements) {
+      achievements = mastery.map((catGroup) => (
+        <div key={`gamecat-${catGroup.name}`}>
+          <h3>{catGroup.name}</h3>
+          {catGroup.games.map((game1) => <SkillPair key={`game-${game1.name}`} entry1={game1} entry2={{}} />)}
+        </div>
+      ));
+    }
+
+    return (
+      <div>
+        <div id="skills">
+          <Grid className="scroll-module">
+            <h2 className="text-center">Breadth of Play</h2>
+            <Quote
+              quote="I play games."
+            />
+            <hr />
+            {breadth.map((catGroup) => {
+              const gamePairs = groupPairs(catGroup.games);
+              return (
+                <div key={`gamecat-${catGroup.name}`}>
+                  <h3>{catGroup.name}</h3>
+                  {gamePairs.map(([game1, game2]) => <SkillPair key={`game-${game1.name}-${game2.name}`} entry1={game1} entry2={game2} />)}
+                </div>
+              );
+            })}
+          </Grid>
+        </div>
+        <div id="achievements">
+          <Grid className="scroll-module">
+            <h2 className="text-center">Achievements</h2>
+            <Quote
+              quote="I master games."
+            />
+            <hr />
+            <Carousel id="carousel">
+              {carousel.map((carouselItem) => (
+                <Carousel.Item key={`carousel-${carouselItem.key}`}>
+                  <img
+                    className="d-block w-100"
+                    src={carouselItem.image}
+                    alt={carouselItem.alt}
+                  />
+                  <Carousel.Caption>
+                    <h3>{carouselItem.label}</h3>
+                    <p>{carouselItem.description}</p>
+                  </Carousel.Caption>
+                </Carousel.Item>
+              ))}
+            </Carousel>
+            {achievements}
+          </Grid>
+        </div>
       </div>
-      <div id="achievements">
-        <Grid className="scroll-module">
-          <h2 className="text-center">Achievements</h2>
-          <Quote
-            quote="I master games."
-          />
-          <hr />
-          {mastery.map((catGroup) => (
-            <div key={`gamecat-${catGroup.name}`}>
-              <h3>{catGroup.name}</h3>
-              {catGroup.games.map((game1) => <SkillPair key={`game-${game1.name}`} entry1={game1} entry2={{}} />)}
-            </div>
-          ))}
-        </Grid>
-      </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default Skills;

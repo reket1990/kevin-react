@@ -4,3 +4,9 @@ body {
 
 h1 { font-weight: 500; }
 h2 { font-weight: 300; }
+
+.showMore {
+  color: #8b0000;
+  cursor: pointer;
+  text-align: center;
+}

@@ -24,6 +24,14 @@
   color: #8b0000;
 }
 
+  #achievements #carousel h3 {
+    color: #ffffff;
+  }
+
+#achievements .showMore {
+  margin-top: 40px;
+}
+
 #achievements .value {
   margin-top: 10px;
 }
