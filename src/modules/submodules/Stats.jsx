@@ -45,17 +45,13 @@ class Stats extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({ tabIndex: 0 }); // hack to force re-render to calculate width
-    this.drawCanvas();
+    this.forceUpdate(); // hack to force re-render to calculate width and to draw canvas
   }
 
   componentDidUpdate() {
-    this.drawCanvas();
-  }
-
-  drawCanvas() {
     const { tabIndex } = this.state;
     const setTabIndex = (index) => { this.setState({ tabIndex: index }); };
+    const rerender = () => { this.forceUpdate(); };
 
     // Define pentagon (or other polygon) size and coordinates.
     const width = document.getElementById('statsWidth') && document.getElementById('statsWidth').offsetWidth;
@@ -64,6 +60,20 @@ class Stats extends React.Component {
     const polygonY = 240 * sizeMultiplier;
     const polygonSize = 120 * sizeMultiplier;
     const circleSize = 56 * sizeMultiplier;
+
+    // Width change detector
+    function widthChangeDetectorLoop() {
+      let shouldLoop = true;
+      const currentWidth = document.getElementById('statsWidth') && document.getElementById('statsWidth').offsetWidth;
+      if (width !== currentWidth) {
+        shouldLoop = false;
+        rerender();
+      }
+      if (shouldLoop) {
+        setTimeout(widthChangeDetectorLoop, 100);
+      }
+    }
+    widthChangeDetectorLoop();
 
     // Get canvas context.
     const canvas = document.getElementById('statsCanvas');
