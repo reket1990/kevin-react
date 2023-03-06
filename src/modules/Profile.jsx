@@ -23,7 +23,7 @@ function Profile() {
             <p>
               <strong>Name:</strong>
               <br />
-              Kevin Riley
+              Kevin &ldquo;qxc&rdquo; Riley
             </p>
             <p>
               <strong>Age:</strong>

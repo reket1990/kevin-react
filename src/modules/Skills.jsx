@@ -345,7 +345,7 @@ class Skills extends React.Component {
     const { showSkills, showAchievements } = this.state;
 
     let skills = (
-      <p className="showMore" onClick={() => this.setState({ showSkills: true })}>Show More Skills</p>
+      <p className="showMore" onClick={() => this.setState({ showSkills: true })}>Show Gaming Breakdown</p>
     );
     if (showSkills) {
       skills = breadth.map((catGroup) => {

@@ -5,25 +5,51 @@ import './Stats.css';
 
 // Code inspired by https://codepen.io/semibran/pen/NPOGdd
 
+const statsData = [
+  {
+    title: 'Strategy',
+    value: '100',
+    description: 'StarCraft 2 IEM Champion, Masters ranked player in League of Legends, best Hearthstone player in the world, I am well versed in strategy games.',
+  },
+  {
+    title: 'FPS',
+    value: '85',
+    description: 'Boom headshot.',
+  },
+  {
+    title: 'Tabletop',
+    value: '99',
+    description: 'I literally make board games.',
+  },
+  {
+    title: 'Other',
+    value: '92',
+    description: 'I play games.',
+  },
+  {
+    title: 'RPG',
+    value: '97',
+    description: 'I\'ve no-lifed a game or two in my time.',
+  },
+];
+
 class Stats extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = { tabIndex: 0 };
-  // }
+  constructor(props) {
+    super(props);
+    this.state = { tabIndex: 0 };
+  }
 
   componentDidMount() {
-    // Define player object and statistics
-    const player = {
-      strategy: 99,
-      fps: 85,
-      tabletop: 99,
-      other: 92,
-      rpg: 97,
-    };
+    this.postRender();
+  }
 
-    // Array that takes information from the player object to get the order
-    // in which stats are displayed onscreen
-    const statOrder = Object.keys(player);
+  componentDidUpdate() {
+    this.postRender();
+  }
+
+  postRender() {
+    const { tabIndex } = this.state;
+    const setTabIndex = (index) => { this.setState({ tabIndex: index }); };
 
     // Define colors
     const statColors = ['#339933', '#333399', '#999933', '#993399', '#993333'];
@@ -35,7 +61,6 @@ class Stats extends React.Component {
     // Define size of circles.
     const circleSize = 56;
     let circles = [];
-    const circleIndexes = statColors.map((color) => ({ defaultColor: color, color, over: false }));
 
     const innerPolygonColor = statColors[0];
     const innerPolygonKnobs = statColors.map(() => ({ over: false }));
@@ -95,7 +120,7 @@ class Stats extends React.Component {
     function redraw() {
       circles = [];
 
-      const polygon = drawRegularPolygon(polygonX, polygonY, '#666', '#333', 2, statOrder.length, polygonSize);
+      const polygon = drawRegularPolygon(polygonX, polygonY, '#666', '#333', 2, statsData.length, polygonSize);
       ctx.beginPath();
       ctx.setLineDash([5]);
       ctx.lineDashOffset = 10;
@@ -116,13 +141,13 @@ class Stats extends React.Component {
       const innerPolygonVertices = [];
       let x;
       let y;
-      for (let i = 0; i < statOrder.length + 1; i += 1) {
-        index = i % statOrder.length;
+      for (let i = 0; i < statsData.length + 1; i += 1) {
+        index = i % statsData.length;
         if (vertices[index] === undefined)vertices[index] = {};
         if (innerPolygonVertices[index] === undefined)innerPolygonVertices[index] = {};
         vertices[index].x = polygon[index].x;
         vertices[index].y = polygon[index].y;
-        stat = player[statOrder[index]];
+        stat = statsData[index].value;
         const distX = vertices[index].x - polygonX;
         const distY = vertices[index].y - polygonY;
         vertices[index].distX = distX;
@@ -145,21 +170,12 @@ class Stats extends React.Component {
       ctx.stroke();
 
       for (let i = 0; i < innerPolygonVertices.length; i += 1) {
-        x = innerPolygonVertices[i].x;
-        y = innerPolygonVertices[i].y;
-        innerPolygonKnobs[i].x = x;
-        innerPolygonKnobs[i].y = y;
-        if (innerPolygonKnobs[i].over) {
-          ctx.beginPath();
-          ctx.arc(x, y, 8, 0, 2 * Math.PI, false);
-          ctx.strokeStyle = statColors[index];
-          ctx.stroke();
-          ctx.closePath();
-        }
+        innerPolygonKnobs[i].x = innerPolygonVertices[i].x;
+        innerPolygonKnobs[i].y = innerPolygonVertices[i].y;
       }
 
       // Draw circles;
-      for (let i = 0; i < statOrder.length; i += 1) {
+      for (let i = 0; i < statsData.length; i += 1) {
         index = i;
         x = vertices[index].x + Math.cos(vertices[index].radians) * (circleSize + 8);
         y = vertices[index].y + Math.sin(vertices[index].radians) * (circleSize + 8);
@@ -171,13 +187,13 @@ class Stats extends React.Component {
         ctx.beginPath();
         ctx.arc(x, y, circleSize - 4, 0, 2 * Math.PI, false);
         ctx.fillStyle = '#fff';
-        if (circleIndexes[index].over)ctx.fillStyle = statColors[index];
+        if (index === tabIndex)ctx.fillStyle = statColors[index];
         ctx.fill();
         ctx.closePath();
         ctx.beginPath();
         ctx.arc(x, y, circleSize - 6, 0, 2 * Math.PI, false);
         ctx.fillStyle = statColors[index];
-        if (circleIndexes[index].over)ctx.fillStyle = '#fff';
+        if (index === tabIndex)ctx.fillStyle = '#fff';
         ctx.fill();
         ctx.closePath();
         circles.push({
@@ -185,82 +201,44 @@ class Stats extends React.Component {
           y,
           size: circleSize - 6,
           radius: (circleSize - 6) / 2,
-          stat: statOrder[index],
+          stat: statsData[index].title,
           color: statColors[index],
         });
         ctx.fillStyle = '#fff';
-        if (circleIndexes[index].over)ctx.fillStyle = statColors[index];
+        if (index === tabIndex)ctx.fillStyle = statColors[index];
         ctx.font = '16px Open Sans';
-        text = statOrder[index].toUpperCase();
-        stat = player[statOrder[index]];
+        text = statsData[index].title.toUpperCase();
+        stat = statsData[index].value;
         ctx.fillText(text, x - ctx.measureText(text).width / 2, y);
         ctx.fillText(stat, x - ctx.measureText(stat).width / 2, y + 16);
       }
     }
     redraw();
-    function getClosestPointOnLine(line, x, y) {
-      const lerp = (a, b, t) => (a + t * (b - a));
-      const dx = line.x1 - line.x0;
-      const dy = line.y1 - line.y0;
-      let t = ((x - line.x0) * dx + (y - line.y0) * dy) / (dx * dx + dy * dy);
-      t = Math.min(1, Math.max(0, t));
-      const lineX = lerp(line.x0, line.x1, t);
-      const lineY = lerp(line.y0, line.y1, t);
-      return ({ x: lineX, y: lineY });
-    }
-    function pythagorean(dx, dy) {
-      return Math.sqrt(dx * dx + dy * dy);
-    }
-    const fps = 60;
     const mouse = new MouseHandler();
-    let change;
+
     function loop() {
-      change = false;
+      let shouldLoop = true;
       for (let i = 0; i < circles.length; i += 1) {
         const circle = circles[i];
         const distX = circle.x - mouse.x;
         const distY = circle.y - mouse.y;
         const distTotal = Math.sqrt(distX * distX + distY * distY);
         if (distTotal < circle.size) {
-          if (!circleIndexes[i].over)change = true;
-          circleIndexes[i].over = true;
-        } else {
-          if (circleIndexes[i].over)change = true;
-          circleIndexes[i].over = false;
+          redraw();
+          setTabIndex(i);
+          shouldLoop = false;
         }
       }
-      for (let i = 0; i < innerPolygonKnobs.length; i += 1) {
-        const knob = innerPolygonKnobs[i];
-        const distX = knob.x - mouse.x;
-        const distY = knob.y - mouse.y;
-        const distTotal = pythagorean(distX, distY);
-        if (distTotal < 8) {
-          if (!knob.over)change = true;
-          knob.over = true;
-        } else {
-          if (knob.over)change = true;
-          knob.over = false;
-        }
-        if (mouse.down && knob.over) {
-          knob.dragging = true;
-          const line = {
-            x0: polygonX, y0: polygonY, x1: vertices[i].x, y1: vertices[i].y,
-          };
-          const point = getClosestPointOnLine(line, mouse.x, mouse.y);
-          const distStart = pythagorean(point.x - polygonX, point.y - polygonY);
-          const distStartEnd = pythagorean(vertices[i].x - polygonX, vertices[i].y - polygonY);
-          const percent = distStart / distStartEnd;
-          player[statOrder[i]] = Math.round(percent * 100);
-          change = true;
-        }
+      if (shouldLoop) {
+        setTimeout(loop, 100);
       }
-      if (change)redraw();
-      setTimeout(loop, 1000 / fps);
     }
-    setTimeout(loop, 1000 / fps);
+    loop();
   }
 
   render() {
+    const { tabIndex } = this.state;
+
     return (
       <div id="stats">
         <Grid>
@@ -269,10 +247,9 @@ class Stats extends React.Component {
               <canvas id="statsCanvas" width="480" height="480" />
             </Col>
             <Col md={4}>
-              <h3>Strategy</h3>
+              <h3>{ statsData[tabIndex].title }</h3>
               <p>
-                StarCraft 2 IEM Champion, Masters ranked player in League of Legends,
-                best Hearthstone player in the world, I am well versed in strategy games.
+                { statsData[tabIndex].description }
               </p>
             </Col>
           </Row>
