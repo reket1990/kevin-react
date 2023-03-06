@@ -37,41 +37,41 @@ function Portfolio() {
           quote="I make games."
         />
         <hr />
-        {portfolio.map((interestItem) => {
+        {portfolio.map((portfolioItem) => {
           itemNum += 1;
           if (itemNum % 2) {
             return (
-              <Row key={`interest-item-${interestItem.name}`} className="interest-item-row">
+              <Row key={`portfolio-item-${portfolioItem.name}`} className="portfolio-item-row">
                 <Col sm={4} md={3}>
-                  <div className="interest-item-image-container">
-                    <img className="interest-item-image" src={interestItem.image} alt={interestItem.name} />
-                    <div className="interest-item-image-background" style={interestItem.style} />
+                  <div className="portfolio-item-image-container">
+                    <img className="portfolio-item-image" src={portfolioItem.image} alt={portfolioItem.name} />
+                    <div className="portfolio-item-image-background" style={portfolioItem.style} />
                   </div>
                 </Col>
                 <Col sm={8} md={9}>
-                  <h3>{ interestItem.name }</h3>
-                  <p>{ interestItem.description }</p>
+                  <h3>{ portfolioItem.name }</h3>
+                  <p>{ portfolioItem.description }</p>
                 </Col>
               </Row>
             );
           }
           // else
           return (
-            <Row key={`interest-item-${interestItem.name}`} className="interest-item-row">
+            <Row key={`portfolio-item-${portfolioItem.name}`} className="portfolio-item-row">
               <Col sm={4} md={3} className="visible-xs-block">
-                <div className="interest-item-image-container">
-                  <img className="interest-item-image" src={interestItem.image} alt="{interest.name}" />
-                  <div className="interest-item-image-background" style={interestItem.style} />
+                <div className="portfolio-item-image-container">
+                  <img className="portfolio-item-image" src={portfolioItem.image} alt="{interest.name}" />
+                  <div className="portfolio-item-image-background" style={portfolioItem.style} />
                 </div>
               </Col>
               <Col sm={8} md={9}>
-                <h3>{ interestItem.name }</h3>
-                <p>{ interestItem.description }</p>
+                <h3>{ portfolioItem.name }</h3>
+                <p>{ portfolioItem.description }</p>
               </Col>
               <Col sm={4} md={3} className="hidden-xs">
-                <div className="interest-item-image-container">
-                  <img className="interest-item-image" src={interestItem.image} alt="{interest.name}" />
-                  <div className="interest-item-image-background" style={interestItem.style} />
+                <div className="portfolio-item-image-container">
+                  <img className="portfolio-item-image" src={portfolioItem.image} alt="{interest.name}" />
+                  <div className="portfolio-item-image-background" style={portfolioItem.style} />
                 </div>
               </Col>
             </Row>
