@@ -24,16 +24,13 @@
   color: #8b0000;
 }
 
-  #achievements #carousel {
-    height: 700px;
-  }
-
-    #achievements #carousel h3 {
-      color: #ffffff;
+  #achievements #carousel h3 {
+    color: #ffffff;
   }
 
   #achievements .carouselImage {
-    height: 100%;
+    height: 700px;
+    object-fit: contain;
   }
 
 #achievements .showMore {
