@@ -24,11 +24,20 @@
   color: #8b0000;
 }
 
-  #achievements #carousel h3 {
-    color: #ffffff;
+  #achievements #carousel {
+    height: 700px;
+  }
+
+    #achievements #carousel h3 {
+      color: #ffffff;
+  }
+
+  #achievements .carouselImage {
+    height: 100%;
   }
 
 #achievements .showMore {
+  margin-bottom: 20px;
   margin-top: 40px;
 }
 

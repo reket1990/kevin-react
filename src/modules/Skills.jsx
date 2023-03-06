@@ -385,7 +385,7 @@ class Skills extends React.Component {
               {carousel.map((carouselItem) => (
                 <Carousel.Item key={`carousel-${carouselItem.key}`}>
                   <img
-                    className="d-block w-100"
+                    className="d-block w-100 carouselImage"
                     src={carouselItem.image}
                     alt={carouselItem.alt}
                   />
