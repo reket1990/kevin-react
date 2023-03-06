@@ -60,7 +60,7 @@ function Portfolio() {
             <Row key={`portfolio-item-${portfolioItem.name}`} className="portfolio-item-row">
               <Col sm={4} md={3} className="visible-xs-block">
                 <div className="portfolio-item-image-container">
-                  <img className="portfolio-item-image" src={portfolioItem.image} alt="{interest.name}" />
+                  <img className="portfolio-item-image" src={portfolioItem.image} alt={portfolioItem.name} />
                   <div className="portfolio-item-image-background" style={portfolioItem.style} />
                 </div>
               </Col>
@@ -70,7 +70,7 @@ function Portfolio() {
               </Col>
               <Col sm={4} md={3} className="hidden-xs">
                 <div className="portfolio-item-image-container">
-                  <img className="portfolio-item-image" src={portfolioItem.image} alt="{interest.name}" />
+                  <img className="portfolio-item-image" src={portfolioItem.image} alt={portfolioItem.name} />
                   <div className="portfolio-item-image-background" style={portfolioItem.style} />
                 </div>
               </Col>
