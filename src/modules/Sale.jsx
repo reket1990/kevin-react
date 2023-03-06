@@ -1,8 +1,8 @@
 import React from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
-import './Sale.css';
+import './About.css';
 import Quote from './submodules/Quote';
-// Images for Sale
+// Images for About
 import algoPic from '../images/algorithm.webp';
 
 const portfolio = [{
@@ -14,9 +14,9 @@ const portfolio = [{
 
 let itemNum = 0;
 
-function Sale() {
+function About() {
   return (
-    <div id="sale">
+    <div id="about">
       <Grid className="scroll-module">
         <h2 className="text-center">What This Is About</h2>
         <Quote
@@ -68,4 +68,4 @@ function Sale() {
   );
 }
 
-export default Sale;
+export default About;
