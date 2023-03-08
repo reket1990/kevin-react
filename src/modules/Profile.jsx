@@ -9,6 +9,8 @@ const ageMS = Date.now() - new Date('10/11/1989').getTime();
 const age = new Date(ageMS).getUTCFullYear() - 1970;
 
 function Profile() {
+  const description = "I'm a game designer, former professional gamer, software engineer, and gaming enthusiast. I love playing games, thinking about how they work, and getting good at them. My knowledge of different games is massive because my hunger for new games is insatiable and as a professional gamer, I spent thousands of hours trying to be the best possible. I can analyze your game in a way few people can and provide focused feedback to improve it as efficiently as possible.";
+
   return (
     <div id="profile">
       <Grid className="scroll-module">
@@ -49,15 +51,7 @@ function Profile() {
           <Col md={5}>
             <h3>About me</h3>
             <p>
-              I know games in a way few people do because I love playing new games and I love
-              getting good at games. I was a professional Starcraft 2 player for many years.
-              After that, I&apos;ve pursued high achievements in many different games, some in
-              competitive games against other players and some in purely player vs AI experiences.
-              Because I&apos;ve spent so much of my life involved directly in playing games, I pick
-              up new games quickly and can provide design insight quickly regarding many facets of
-              a game ranging from difficulty, UI, presentation and more. I also worked as a
-              Software Engineer for 1.5 years and studied CS in college so I have an appreciation
-              for programming.
+              { description }
             </p>
           </Col>
         </Row>

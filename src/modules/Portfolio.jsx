@@ -3,27 +3,20 @@ import { Grid, Row, Col } from 'react-bootstrap';
 import './Portfolio.css';
 import Quote from './submodules/Quote';
 // Images for Portfolio
-import algoPic from '../images/algorithm.webp';
-import gamesPic from '../images/gamecube-controller.png';
-import cardsPic from '../images/cards.webp';
+import aePic from '../images/aeons_end.png';
+import kodamaPic from '../images/kodama.png';
 
 const portfolio = [{
   name: 'Aeons End',
-  description: 'Aeon\'s End is a cooperative game that explores the deckbuilding genre with a number of innovative mechanisms, including a variable turn order system that simulates the chaos of an attack, and deck management rules that require careful planning with every discarded card. Players will struggle to defend Gravehold from The Nameless and their hordes using unique abilities, powerful spells, and, most importantly of all, their collective wits.',
-  image: algoPic,
+  description: 'Aeon\'s End is a cooperative deck-builder that is ranked in the top 100 of all board games on boardgamegeek.com that I designed, found a publisher for and successfully created a franchise out of. Aeon\'s End has been releasing new content via kickstarter every year since 2016.',
+  image: aePic,
   style: { backgroundColor: 'orange' },
 },
 {
   name: 'Kodama Forest',
-  description: 'In Kodama Forest, everyone works with their neighbors to cover as much of their shared player boards as possible. Every round, each player places one tile on the board to their right and one tile on the board to their left. Forests are penalized for every uncovered dirt section and the game ends when one board has covered all of its “5” and “10” dirt spaces. Players score both of their shared boards, with the lowest combined score determining the winner.',
-  image: gamesPic,
+  description: 'Kodama Forest is a semi-cooperative tiling game I designed where players work together with each of their neighbors to cover their board with tiles as efficiently as possible.',
+  image: kodamaPic,
   style: { backgroundColor: 'yellowgreen' },
-},
-{
-  name: 'Sapphiro',
-  description: 'Dazzling gems are the focus of your quest in Sapphiro. Play your diamond tiles to capture rubies, emeralds, and other valuable jewels by matching colors and surrounding the gems. Be careful not to leave a quick or easy way for your opponents to do the same. Be the first to collect one jewel of each color to win.',
-  image: cardsPic,
-  style: { backgroundColor: '#666' },
 }];
 
 let itemNum = 0;

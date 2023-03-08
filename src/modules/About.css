@@ -4,23 +4,23 @@
 }
 
 @media (min-width: 768px) {
-  .portfolio-item-row {
+  .about-item-row {
     align-items: center;
     display: flex;
   }
 }
 
-.portfolio-item-image-container {
+.about-item-image-container {
   margin: 20px auto 0;
   max-width: 250px;
   position: relative;
   text-align: center;
   width: 95%;
 }
-  .portfolio-item-image {
+  .about-item-image {
     width: 100%;
   }
-  .portfolio-item-image-background {
+  .about-item-image-background {
     border-radius: 50%;
     height: 100%;
     position: absolute;

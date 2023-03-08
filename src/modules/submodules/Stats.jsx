@@ -15,13 +15,17 @@ const statsData = [
   {
     title: 'FPS',
     value: '85',
-    description: 'Boom headshot.',
+    description: `Destiny 2 - 1200+ Hours\n
+Counter-Strike Source - 300+ Hours\n
+Overwatch - 150+ Hours\n
+\n
+Boom headshot.`,
     color: '#333399',
   },
   {
     title: 'Tabletop',
     value: '99',
-    description: 'I literally make board games.',
+    description: 'Specialization in deck builders. Years spent designing board games professionally and playing new games at conventions.',
     color: '#999933',
   },
   {
@@ -238,6 +242,7 @@ class Stats extends React.Component {
 
     const width = document.getElementById('statsWidth') && document.getElementById('statsWidth').offsetWidth;
 
+    console.log(statsData[tabIndex].description);
     return (
       <div id="stats">
         <Grid>
@@ -250,7 +255,7 @@ class Stats extends React.Component {
             <Col md={4}>
               <h3>{ statsData[tabIndex].title }</h3>
               <p>
-                { statsData[tabIndex].description }
+                { statsData[tabIndex].description.split(/\n/).map((line) => <div key={line}>{line}</div>) }
               </p>
             </Col>
           </Row>
