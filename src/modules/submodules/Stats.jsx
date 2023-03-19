@@ -12,7 +12,7 @@ const statsData = [
     description: `StarCraft 2 - 7000+ Hours
 League of Legends - 3000+ Hours
 
-Once the best purple Terran in North America.`,
+Once upon a time, the best purple Terran in North America.`,
     color: '#339933',
   },
   {

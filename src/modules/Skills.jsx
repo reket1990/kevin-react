@@ -246,6 +246,20 @@ const carousel = [
     label: 'FXO qxc celebrating a win in Korea',
     description: 'StarCraft 2 - July 2011',
   },
+  {
+    key: 'fourth',
+    image: mastersPic,
+    alt: 'Masters',
+    label: 'Top 60 in North America',
+    description: 'Heroes of the Storm',
+  },
+  {
+    key: 'fifth',
+    image: mastersPic,
+    alt: 'Masters',
+    label: 'Masters Rank - Top 0.18% of players in the world',
+    description: 'Overwatch',
+  },
 ];
 
 const mastery = [
