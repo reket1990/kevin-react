@@ -5,6 +5,8 @@ import Experience from './submodules/Experience';
 // Images for resume
 import muddIcon from '../images/icon-mudd.jpg';
 import appLovinIcon from '../images/icon-applovin.jpg';
+import aeonsEndIcon from '../images/aeons_end.png';
+import starCraftIcon from '../images/icon-starcraft2.png';
 
 const educations = [{
   icon: muddIcon,
@@ -34,6 +36,28 @@ const careers = [{
     + '• Wrote tools to interact with google API including sheets, calendar and drive in node & python',
   location: 'Palo Alto, CA',
   website: 'https://www.applovin.com',
+},
+{
+  icon: aeonsEndIcon,
+  name: 'Aeon’s End',
+  start_date: '2015',
+  end_date: 'Present',
+  title: 'Independent Game Designer',
+  description:
+    '• Lead Game Designer, Project Manager, and Product Manager\n'
+    + '• Designed 4 stand-alone games and 8 expansions. Over 35,000 copies sold. Top 70 on boardgamegeek.com\n'
+    + '• Managed 4 separate blind playtester sessions with 200+ playtesters\n',
+  website: 'https://boardgamegeek.com/boardgame/191189/aeons-end',
+},
+{
+  icon: starCraftIcon,
+  name: 'StarCraft 2',
+  start_date: '2011',
+  end_date: '2015',
+  title: 'Pro Gamer',
+  description:
+    '• Top 5 USA player, top 100 worldwide at peak out of millions of active players',
+  website: 'https://starcraft2.com/',
 }];
 
 class Experiences extends React.Component {

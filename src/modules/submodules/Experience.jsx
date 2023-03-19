@@ -20,16 +20,22 @@ function Experience({ entry }) {
         <p className="title">{entry.title}</p>
         <p className="description">{entry.description}</p>
         <div className="details">
-          <span className="detail">
-            <span className="glyphicon glyphicon-map-marker" />
-            {' '}
-            {entry.location}
-          </span>
-          <span className="divider">|</span>
-          <span className="detail">
-            <span className="glyphicon glyphicon-link" />
-            <a href={entry.website} target="_blank" className="link" rel="noreferrer">{entry.website}</a>
-          </span>
+          { entry.location && (
+            <span className="detail">
+              <span className="glyphicon glyphicon-map-marker" />
+              {' '}
+              {entry.location}
+            </span>
+          )}
+          { entry.location && entry.website && (
+            <span className="divider">|</span>
+          )}
+          { entry.website && (
+            <span className="detail">
+              <span className="glyphicon glyphicon-link" />
+              <a href={entry.website} target="_blank" className="link" rel="noreferrer">{entry.website}</a>
+            </span>
+          )}
         </div>
       </Col>
     </Row>
