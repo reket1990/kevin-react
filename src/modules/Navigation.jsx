@@ -15,7 +15,7 @@ const tabs = [{
   text: 'Profile',
 }, {
   id: 'skills',
-  text: 'Skills',
+  text: 'Games',
 }, {
   id: 'achievements',
   text: 'Achievements',

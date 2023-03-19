@@ -375,9 +375,9 @@ class Skills extends React.Component {
       <div>
         <div id="skills">
           <Grid className="scroll-module">
-            <h2 className="text-center">Skills</h2>
+            <h2 className="text-center">My Gaming Obsessions</h2>
             <Quote
-              quote="I play games."
+              quote="I play a lot of games."
             />
             <hr />
             <Stats />

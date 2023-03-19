@@ -9,17 +9,20 @@ const statsData = [
   {
     title: 'Strategy',
     value: '100',
-    description: 'StarCraft 2 IEM Champion, Masters ranked player in League of Legends, best Hearthstone player in the world, I am well versed in strategy games.',
+    description: `StarCraft 2 - 7000+ Hours
+League of Legends - 3000+ Hours
+
+Once the best purple Terran in North America.`,
     color: '#339933',
   },
   {
     title: 'FPS',
-    value: '85',
-    description: `Destiny 2 - 1200+ Hours\n
-Counter-Strike Source - 300+ Hours\n
-Overwatch - 150+ Hours\n
-\n
-Boom headshot.`,
+    value: '95',
+    description: `Destiny 2 - 1200+ Hours
+Counter-Strike Source - 300+ Hours
+Overwatch - 150+ Hours
+
+I'm a headshot extraordinaire.`,
     color: '#333399',
   },
   {
@@ -31,13 +34,23 @@ Boom headshot.`,
   {
     title: 'Other',
     value: '92',
-    description: 'I play games.',
+    description: `Super Smash Bros Melee - 800+ Hours
+Xcom - 450+ Hours
+Guilty Gear Strive - 150+ Hours
+Guitar Hero 3 - 150+ Hours
+Slay the Spire - 150+ Hours
+
+I main Sheik.`,
     color: '#993399',
   },
   {
     title: 'RPG',
     value: '97',
-    description: 'I\'ve no-lifed a game or two in my time.',
+    description: `Path of Exile - 800+ Hours
+Diablo - 450+ Hours
+New World - 300+ Hours
+
+I've no-lifed a game or a thousand.`,
     color: '#993333',
   },
 ];
@@ -242,7 +255,6 @@ class Stats extends React.Component {
 
     const width = document.getElementById('statsWidth') && document.getElementById('statsWidth').offsetWidth;
 
-    console.log(statsData[tabIndex].description);
     return (
       <div id="stats">
         <Grid>
@@ -254,9 +266,12 @@ class Stats extends React.Component {
             </Col>
             <Col md={4}>
               <h3>{ statsData[tabIndex].title }</h3>
-              <p>
-                { statsData[tabIndex].description.split(/\n/).map((line) => <div key={line}>{line}</div>) }
-              </p>
+              { statsData[tabIndex].description.split(/\n/).map((line) => {
+                if (!line) {
+                  return <br />;
+                }
+                return <p key={line}>{line}</p>;
+              }) }
             </Col>
           </Row>
         </Grid>
